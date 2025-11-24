@@ -1,0 +1,17 @@
+{
+    "name": "fausto/construccion-building-materials-management",
+    "description": "Material Management system for a construction project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PJMP4826",
+            "email": "faustojaviermendozaperez.tareas@gmail.com"
+        }
+    ],
+    "require": {}
+}
