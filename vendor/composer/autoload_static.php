@@ -11,6 +11,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         array (
             'Domain\\Entities\\' => 16,
         ),
+        'B' => 
+        array (
+            'Brick\\Math\\' => 11,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -21,6 +25,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'Domain\\Entities\\' => 
         array (
             0 => __DIR__ . '/../..' . '/domain/entities',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ),
         'App\\' => 
         array (

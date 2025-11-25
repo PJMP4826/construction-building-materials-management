@@ -14,5 +14,7 @@
             "email": "faustojaviermendozaperez.tareas@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "brick/math": "^0.14.1"
+    }
 }
