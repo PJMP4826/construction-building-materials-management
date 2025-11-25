@@ -3,13 +3,14 @@
 namespace Domain\Entities;
 
 use Brick\Math\BigDecimal;
+use Domain\Emuns\Unit;
 
 class Material
 {
     private ?string $id = null;
     private string $name;
     private ?string $description = null;
-    private string $unit;
+    private Unit $unit;
     private BigDecimal $unit_price;
     private int $stock;
     private bool $active;
@@ -19,7 +20,7 @@ class Material
     public function __construct(
         string     $name,
         ?string    $description = null,
-        string     $unit,
+        Unit       $unit,
         BigDecimal $unit_price,
         int        $stock = 0,
         bool       $active = true
@@ -32,18 +33,15 @@ class Material
         $this->stock = $stock;
         $this->active = $active;
         $this->created_at = new \DateTime();
+        $this->update_at = new \DateTime();
         $this->validate();
     }
 
-    private function validate()
+    private function validate(): void
     {
 
         if (empty(trim($this->name))) {
             throw new \InvalidArgumentException("El nombre del material no puede ser vacío");
-        }
-
-        if (empty($this->unit)) {
-            throw new \DomainException("La unidad de medida no puede estar vacía");
         }
 
         if ($this->unit_price->isNegative()) {
@@ -87,7 +85,7 @@ class Material
         $this->updateStock(-$amount);
     }
 
-    public function aumentarStock(int $amount): void
+    public function upgradeStock(int $amount): void
     {
         if ($amount <= 0) {
             throw new \InvalidArgumentException("La cantidad a aumentar debe ser positiva");
@@ -96,15 +94,15 @@ class Material
         $this->updateStock($amount);
     }
 
-    public function updatePrice(BigDecimal $newAmount)
+    public function updatePrice(BigDecimal $newAmount): void
     {
-        if ($newAmount->compareTo(BigDecimal::zero() < 0)) {
+        if ($newAmount->compareTo(BigDecimal::zero()) < 0) {
             throw new \InvalidArgumentException(
                 "El precio no puede ser negativo"
             );
         }
 
-        $this->unit_price->plus($newAmount);
+        $this->unit_price = $newAmount;
         $this->update_at = new \DateTime();
     }
 
@@ -120,7 +118,7 @@ class Material
         $this->update_at = new \DateTime();
     }
 
-    public function tieneStockDisponible(int $requiredAmount): bool
+    public function hasStockAvailable(int $requiredAmount): bool
     {
         return $this->stock >= $requiredAmount;
     }
@@ -145,7 +143,7 @@ class Material
         return $this->description;
     }
 
-    public function getUnit(): string
+    public function getUnit(): Unit
     {
         return $this->unit;
     }

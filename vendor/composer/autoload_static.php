@@ -10,6 +10,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'D' => 
         array (
             'Domain\\Entities\\' => 16,
+            'Domain\\Emuns\\' => 13,
         ),
         'B' => 
         array (
@@ -25,6 +26,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'Domain\\Entities\\' => 
         array (
             0 => __DIR__ . '/../..' . '/domain/entities',
+        ),
+        'Domain\\Emuns\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/domain/enums',
         ),
         'Brick\\Math\\' => 
         array (

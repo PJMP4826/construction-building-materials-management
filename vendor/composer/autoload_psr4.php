@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Domain\\Entities\\' => array($baseDir . '/domain/entities'),
+    'Domain\\Emuns\\' => array($baseDir . '/domain/enums'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'App\\' => array($baseDir . '/app'),
 );
