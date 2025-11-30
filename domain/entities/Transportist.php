@@ -41,6 +41,7 @@ class Transportist
         $this->deliveryCounts = $deliveryCounts;
         $this->created_at = new \DateTime();
         $this->update_at = new \DateTime();
+        $this->validate();
     }
 
     private function validate(): void
