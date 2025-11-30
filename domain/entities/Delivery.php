@@ -91,4 +91,69 @@ class Delivery
     {
         return !empty($this->signReceiver);
     }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getRequestId(): int
+    {
+        return $this->requestId;
+    }
+
+    public function setRequestId(int $requestId): void
+    {
+        $this->requestId = $requestId;
+    }
+
+    public function getTransportistId(): int
+    {
+        return $this->transportistId;
+    }
+
+    public function setTransportistId(int $transportistId): void
+    {
+        $this->transportistId = $transportistId;
+    }
+
+    public function getDeliveryDate(): \DateTime
+    {
+        return $this->delivery_date;
+    }
+
+    public function setDeliveryDate(\DateTime $delivery_date): void
+    {
+        $this->delivery_date = $delivery_date;
+    }
+
+    public function getRequiredDate(): \DateTime
+    {
+        return $this->required_date;
+    }
+
+    public function setRequiredDate(\DateTime $required_date): void
+    {
+        $this->required_date = $required_date;
+    }
+
+    public function setOnTime(bool $onTime): void
+    {
+        $this->onTime = $onTime;
+    }
+
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTime $created_at): void
+    {
+        $this->created_at = $created_at;
+    }
 }
