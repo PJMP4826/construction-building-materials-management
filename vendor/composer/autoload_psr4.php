@@ -6,6 +6,14 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
+    'Infrastructure\\Read\\Repository\\' => array($baseDir . '/infrastructure/persistence/read'),
+    'Infrastructure\\Database\\' => array($baseDir . '/infrastructure/database'),
+    'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
+    'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Domain\\Entities\\' => array($baseDir . '/domain/entities'),
     'Domain\\Emuns\\' => array($baseDir . '/domain/enums'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
