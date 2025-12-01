@@ -25,9 +25,10 @@ class MaterialesController
             //params
             $activeParam = $request->query('active');
             $searchParam = $request->query('search');
-            $page = $request->query('page');
-            $limit = $request->query('limit');
+            $page = (int) $request->query('page') ?: 1;
+            $limit = (int) $request->query('limit') ?: 10;
 
+            $active = null;
             if ($activeParam !== null) {
                 $active = filter_var($activeParam, FILTER_VALIDATE_BOOLEAN);
             }
@@ -54,11 +55,12 @@ class MaterialesController
 
             $result['data'] = $data;
 
-            if(!$result){
+            if(empty($result['data'])){
                 return Response::json([
                     'success' => false,
-                    'status_code' => 500
-                ], 500);
+                    'message' => 'not found',
+                    'status_code' => 404
+                ], 404);
             }
 
             return Response::json([

@@ -61,6 +61,9 @@ class MaterialReadRepository implements IReadRepository
                 'name' => function ($value) {
                     return ['sql' => " AND name ILIKE :name", 'param' => '%' . $value . '%'];
                 },
+                'search' => function ($value) {  // Nuevo filtro
+                    return ['sql' => " AND name ILIKE :search", 'param' => '%' . $value . '%'];
+                },
                 'active' => function ($value) {
                     return ['sql' => " AND active = :active", 'param' => (bool)$value];
                 },
@@ -106,6 +109,9 @@ class MaterialReadRepository implements IReadRepository
             $allowedFilters = [
                 'name' => function ($value) {
                     return ['sql' => " AND name ILIKE :name", 'param' => '%' . $value . '%'];
+                },
+                'search' => function ($value) {  // Agregar también aquí
+                    return ['sql' => " AND name ILIKE :search", 'param' => '%' . $value . '%'];
                 },
                 'active' => function ($value) {
                     return ['sql' => " AND active = :active", 'param' => (bool) $value];

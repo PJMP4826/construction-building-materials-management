@@ -53,6 +53,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
             'App\\Handlers\\' => 13,
             'App\\DTO\\' => 8,
             'App\\' => 4,
+            'Api\\Controllers\\' => 16,
         ),
     );
 
@@ -136,6 +137,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Api\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/api/controllers',
         ),
     );
 

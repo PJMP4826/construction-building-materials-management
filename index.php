@@ -13,7 +13,7 @@ use Api\Controllers\MaterialesController;
 use App\Handlers\Query\ListarMaterialesHandler;
 use Infrastructure\Read\Repository\MaterialReadRepository;
 
-$conexion = DatabaseConnection::Conectar();
+//$conexion = DatabaseConnection::Conectar();
 
 $router = new Router();
 
@@ -23,3 +23,5 @@ $router->get('/api/get-materials', function () {
     $controller = new MaterialesController($handler);
     $controller->getMaterials();
 });
+
+$router->run();

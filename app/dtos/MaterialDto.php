@@ -39,12 +39,12 @@ class MaterialDto
     {
         return new self(
             id: (int)$data['id'],
-            name: $data['nombre'],
-            description: $data['descripcion'] ?? null,
-            unit: $data['unidad_medida'],
-            unitPrice: (float)$data['precio_unitario'],
-            stock: (int)$data['stock_actual'],
-            active: (bool)$data['activo'],
+            name: $data['name'] ?? $data['nombre'] ?? '',  // Soporta ambos formatos
+            description: $data['description'] ?? $data['descripcion'] ?? null,
+            unit: $data['unit'] ?? $data['unidad_medida'] ?? '',
+            unitPrice: (float)($data['unit_price'] ?? $data['precio_unitario'] ?? 0),
+            stock: (int)($data['stock'] ?? $data['stock_actual'] ?? 0),
+            active: (bool)($data['active'] ?? $data['activo'] ?? false),
             totalSolicitudes: (int)($data['total_solicitudes'] ?? 0),
             cantidadTotalSolicitada: (int)($data['cantidad_total_solicitada'] ?? 0)
         );

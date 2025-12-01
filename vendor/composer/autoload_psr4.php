@@ -26,4 +26,5 @@ return array(
     'App\\Handlers\\' => array($baseDir . '/app/handlers'),
     'App\\DTO\\' => array($baseDir . '/app/dtos'),
     'App\\' => array($baseDir . '/app'),
+    'Api\\Controllers\\' => array($baseDir . '/api/controllers'),
 );

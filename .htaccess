@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+    # Activar motor de reescritura
+    RewriteEngine On
+    RewriteBase /construccion-building-materials-management/
+
+    # ============================================
+    # MANEJO DE ARCHIVOS ESTÁTICOS
+    # ============================================
+
+    # Si el archivo existe (CSS, JS, imágenes, etc.), servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Si el directorio existe, servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # ============================================
+    # TODAS LAS RUTAS - Procesar con index.php
+    # ============================================
+
+    # index.php determina si es API (JSON) o SPA (HTML)
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
