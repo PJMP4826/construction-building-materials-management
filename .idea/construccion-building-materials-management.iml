@@ -9,6 +9,10 @@
       <sourceFolder url="file://$MODULE_DIR$/app/queries" isTestSource="false" packagePrefix="App\Query\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/database" isTestSource="false" packagePrefix="Infrastructure\Database\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/persistence/read" isTestSource="false" packagePrefix="Infrastructure\Read\Repository\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/handlers" isTestSource="false" packagePrefix="App\Handlers\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/handlers/commands" isTestSource="false" packagePrefix="App\Handlers\Command\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/handlers/queries" isTestSource="false" packagePrefix="App\Handlers\Query\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/interfaces" isTestSource="false" packagePrefix="App\Interfaces\" />
       <sourceFolder url="file://$MODULE_DIR$/domain/interfaces" isTestSource="false" packagePrefix="Domain\Interfaces\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

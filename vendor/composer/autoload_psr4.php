@@ -19,6 +19,10 @@ return array(
     'Domain\\Emuns\\' => array($baseDir . '/domain/enums'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'App\\Query\\' => array($baseDir . '/app/queries'),
+    'App\\Interfaces\\' => array($baseDir . '/app/interfaces'),
+    'App\\Handlers\\Query\\' => array($baseDir . '/app/handlers/queries'),
+    'App\\Handlers\\Command\\' => array($baseDir . '/app/handlers/commands'),
+    'App\\Handlers\\' => array($baseDir . '/app/handlers'),
     'App\\DTO\\' => array($baseDir . '/app/dtos'),
     'App\\' => array($baseDir . '/app'),
 );

@@ -46,6 +46,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'A' => 
         array (
             'App\\Query\\' => 10,
+            'App\\Interfaces\\' => 15,
+            'App\\Handlers\\Query\\' => 19,
+            'App\\Handlers\\Command\\' => 21,
+            'App\\Handlers\\' => 13,
             'App\\DTO\\' => 8,
             'App\\' => 4,
         ),
@@ -103,6 +107,22 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'App\\Query\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/queries',
+        ),
+        'App\\Interfaces\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/interfaces',
+        ),
+        'App\\Handlers\\Query\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/handlers/queries',
+        ),
+        'App\\Handlers\\Command\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/handlers/commands',
+        ),
+        'App\\Handlers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/handlers',
         ),
         'App\\DTO\\' => 
         array (

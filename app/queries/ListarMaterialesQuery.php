@@ -12,4 +12,23 @@ class ListarMaterialesQuery
     )
     {
     }
+
+    public function getOffset(): int
+    {
+        return ($this->page - 1) * $this->limit;
+    }
+
+    public function toFilters(): array
+    {
+        $filters = [];
+        if($this->active !== null){
+            $filters['active'] = $this->active;
+        }
+
+        if($this->searchTerm !== null && trim($this->searchTerm) !== ""){
+            $filters['search'] = trim($this->searchTerm);
+        }
+
+        return $filters;
+    }
 }
