@@ -6,6 +6,7 @@
         "psr-4": {
             "App\\": "app/",
             "App\\DTO\\": "app/dtos",
+            "App\\Query\\": "app/queries",
             "Domain\\Entities\\": "domain/entities",
             "Domain\\Emuns\\": "domain/enums",
             "Infrastructure\\Database\\": "infrastructure/database",

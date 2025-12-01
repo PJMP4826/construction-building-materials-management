@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/domain/entities" isTestSource="false" packagePrefix="Domain\Entities\" />
       <sourceFolder url="file://$MODULE_DIR$/domain/enums" isTestSource="false" packagePrefix="Domain\Emuns\" />
       <sourceFolder url="file://$MODULE_DIR$/app/dtos" isTestSource="false" packagePrefix="App\DTO\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/queries" isTestSource="false" packagePrefix="App\Query\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/database" isTestSource="false" packagePrefix="Infrastructure\Database\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/persistence/read" isTestSource="false" packagePrefix="Infrastructure\Read\Repository\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />

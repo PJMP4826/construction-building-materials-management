@@ -17,6 +17,7 @@ return array(
     'Domain\\Entities\\' => array($baseDir . '/domain/entities'),
     'Domain\\Emuns\\' => array($baseDir . '/domain/enums'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
+    'App\\Query\\' => array($baseDir . '/app/queries'),
     'App\\DTO\\' => array($baseDir . '/app/dtos'),
     'App\\' => array($baseDir . '/app'),
 );
