@@ -16,7 +16,8 @@
             "Domain\\Interfaces\\" : "domain/interfaces",
             "Infrastructure\\Database\\": "infrastructure/database",
             "Infrastructure\\Http\\": "infrastructure/http",
-            "Infrastructure\\Read\\Repository\\": "infrastructure/persistence/read"
+            "Infrastructure\\Read\\Repository\\": "infrastructure/persistence/read",
+            "Api\\Controllers\\": "api/controllers"
         }
     },
     "authors": [

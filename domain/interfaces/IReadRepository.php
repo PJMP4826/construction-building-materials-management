@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\interfaces;
+namespace Domain\Interfaces;
 
 interface IReadRepository
 {
