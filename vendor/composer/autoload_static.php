@@ -44,6 +44,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         ),
         'A' => 
         array (
+            'App\\DTO\\' => 8,
             'App\\' => 4,
         ),
     );
@@ -92,6 +93,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'App\\DTO\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/dtos',
         ),
         'App\\' => 
         array (
