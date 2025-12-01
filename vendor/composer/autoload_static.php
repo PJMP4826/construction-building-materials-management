@@ -26,6 +26,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'I' => 
         array (
             'Infrastructure\\Read\\Repository\\' => 31,
+            'Infrastructure\\Http\\' => 20,
             'Infrastructure\\Database\\' => 24,
         ),
         'G' => 
@@ -75,6 +76,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'Infrastructure\\Read\\Repository\\' => 
         array (
             0 => __DIR__ . '/../..' . '/infrastructure/persistence/read',
+        ),
+        'Infrastructure\\Http\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/infrastructure/http',
         ),
         'Infrastructure\\Database\\' => 
         array (

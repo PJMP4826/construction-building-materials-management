@@ -15,6 +15,7 @@
             "Domain\\Emuns\\": "domain/enums",
             "Domain\\Interfaces\\" : "domain/interfaces",
             "Infrastructure\\Database\\": "infrastructure/database",
+            "Infrastructure\\Http\\": "infrastructure/http",
             "Infrastructure\\Read\\Repository\\": "infrastructure/persistence/read"
         }
     },
