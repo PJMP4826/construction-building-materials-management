@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app/queries" isTestSource="false" packagePrefix="App\Query\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/database" isTestSource="false" packagePrefix="Infrastructure\Database\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/persistence/read" isTestSource="false" packagePrefix="Infrastructure\Read\Repository\" />
+      <sourceFolder url="file://$MODULE_DIR$/domain/interfaces" isTestSource="false" packagePrefix="Domain\Interfaces\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />

@@ -35,6 +35,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'D' => 
         array (
             'Dotenv\\' => 7,
+            'Domain\\Interfaces\\' => 18,
             'Domain\\Entities\\' => 16,
             'Domain\\Emuns\\' => 13,
         ),
@@ -82,6 +83,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Domain\\Interfaces\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/domain/interfaces',
         ),
         'Domain\\Entities\\' => 
         array (

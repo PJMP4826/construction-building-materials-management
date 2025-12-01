@@ -14,6 +14,7 @@ return array(
     'Infrastructure\\Database\\' => array($baseDir . '/infrastructure/database'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Domain\\Interfaces\\' => array($baseDir . '/domain/interfaces'),
     'Domain\\Entities\\' => array($baseDir . '/domain/entities'),
     'Domain\\Emuns\\' => array($baseDir . '/domain/enums'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),

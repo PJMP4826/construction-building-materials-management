@@ -5,7 +5,7 @@ namespace Infrastructure\Read\Repository;
 use Brick\Math\BigDecimal;
 use Domain\Emuns\Unit;
 use Domain\Entities\Material;
-use Domain\interfaces\IReadRepository;
+use Domain\Interfaces\IReadRepository;
 
 class MaterialReadRepository implements IReadRepository
 {
@@ -19,11 +19,13 @@ class MaterialReadRepository implements IReadRepository
     public function findById(mixed $id): ?object
     {
         try {
-            $sql = "SELECT id, name, description, unit, unit_price, stock, active, created_at, updated_at FROM materials";
+            $sql = "SELECT id, name, description, unit, unit_price, stock, active, created_at, updated_at FROM materials WHERE id = :id";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute([
+                ':id' => $id
+            ]);
 
-            $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
 
             if (!empty($result)) {
                 $unit = Unit::from($result['unit']);
@@ -36,6 +38,8 @@ class MaterialReadRepository implements IReadRepository
                     stock: $result['stock'],
                     active: $result['active'],
                 );
+
+                $material->setId($result['id']);
 
                 return $material;
             }

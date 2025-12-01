@@ -4,7 +4,7 @@ namespace Domain\Emuns;
 
 enum Unit: string
 {
-    case KILOGRAM = 'Kilogramo';
-    case METER = 'Metro';
-    case LITER = 'Litro';
+    case KILOGRAM = 'kg';
+    case METER = 'meter';
+    case LITER = 'units';
 }

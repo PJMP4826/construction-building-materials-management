@@ -9,6 +9,7 @@
             "App\\Query\\": "app/queries",
             "Domain\\Entities\\": "domain/entities",
             "Domain\\Emuns\\": "domain/enums",
+            "Domain\\Interfaces\\" : "domain/interfaces",
             "Infrastructure\\Database\\": "infrastructure/database",
             "Infrastructure\\Read\\Repository\\": "infrastructure/persistence/read"
         }
