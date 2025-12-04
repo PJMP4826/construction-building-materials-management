@@ -7,6 +7,7 @@
             "App\\": "app/",
             "App\\DTO\\": "app/dtos",
             "App\\Query\\": "app/queries",
+            "App\\Command\\": "app/commands",
             "App\\Handlers\\": "app/handlers",
             "App\\Handlers\\Query\\": "app/handlers/queries",
             "App\\Handlers\\Command\\": "app/handlers/commands",

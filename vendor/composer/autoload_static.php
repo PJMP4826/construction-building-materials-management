@@ -52,6 +52,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
             'App\\Handlers\\Command\\' => 21,
             'App\\Handlers\\' => 13,
             'App\\DTO\\' => 8,
+            'App\\Command\\' => 12,
             'App\\' => 4,
             'Api\\Controllers\\' => 16,
         ),
@@ -133,6 +134,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'App\\DTO\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/dtos',
+        ),
+        'App\\Command\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/commands',
         ),
         'App\\' => 
         array (

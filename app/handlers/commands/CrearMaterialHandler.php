@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Handlers\handle;
+namespace App\Handlers\Command;
 
 use App\commands\CrearMaterialCommand;
 use App\Interfaces\ICommandHandler;

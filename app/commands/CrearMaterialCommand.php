@@ -1,6 +1,6 @@
 <?php
 
-namespace App\commands;
+namespace App\Command;
 
 use Domain\Emuns\Unit;
 use http\Exception\InvalidArgumentException;
