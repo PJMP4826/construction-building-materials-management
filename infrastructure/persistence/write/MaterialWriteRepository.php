@@ -33,7 +33,7 @@ class MaterialWriteRepository implements IWriteRepository
             $stmt->execute([
                 ':name' => $entity->getName(),
                 ':description' => $entity->getDescription(),
-                ':unit' => $entity->getUnit(),
+                ':unit' => $entity->getUnit()->value,
                 ':unit_price' => $entity->getUnitPrice()->__toString(),
                 ':stock' => $entity->getStock(),
                 ':active' => $entity->isActive() ? 1 : 0,
