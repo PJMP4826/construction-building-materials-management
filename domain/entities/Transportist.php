@@ -26,7 +26,7 @@ class Transportist
      */
     public function __construct(
         string $name,
-        string $email,
+        ?string $email,
         string $deliveryArea,
         bool   $available = true,
         float  $ratingAverage = 0.00,
@@ -48,14 +48,14 @@ class Transportist
     {
 
         if (empty(trim($this->name))) {
-            throw new \InvalidArgumentException("El nombre del material no puede ser vacío");
+            throw new \InvalidArgumentException("El nombre del transportista no puede ser vacío");
         }
 
         if (empty($this->deliveryArea)) {
-            throw new \InvalidArgumentException("El la zona de cobertura no puede ser vacío");
+            throw new \InvalidArgumentException("La zona de cobertura no puede ser vacía");
         }
 
-        if (!$this->validateEmail($this->email)) {
+        if ($this->email !== null && !$this->validateEmail($this->email)) {
             throw new \InvalidArgumentException("El email es inválido");
         }
     }
