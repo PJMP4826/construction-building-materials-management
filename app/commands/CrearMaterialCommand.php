@@ -2,13 +2,14 @@
 
 namespace App\commands;
 
+use Domain\Emuns\Unit;
 use http\Exception\InvalidArgumentException;
 
 class CrearMaterialCommand
 {
     public readonly string $name;
     public readonly ?string $description;
-    public readonly string $unit;
+    public readonly Unit $unit;
     public readonly string $unitPrice;
     public readonly int $stock;
     public readonly bool $active;
@@ -78,9 +79,21 @@ class CrearMaterialCommand
 
         $this->name = $name;
         $this->description = $description;
-        $this->unit = $unit;
+        $this->unit = $this->stringToEnum($unit);
         $this->unitPrice = $unitPrice;
         $this->stock = $stock;
         $this->active = $active;
+    }
+
+    private function stringToEnum(string $unit): Unit
+    {
+        try {
+            return Unit::from($unit);
+        } catch (\ValueError){
+            throw new InvalidArgumentException(
+              "Unidad de medida invalida, valores permitidos: ".
+              implode(',', array_map(fn($u)=> $u->value, Unit::cases()))
+            );
+        }
     }
 }
