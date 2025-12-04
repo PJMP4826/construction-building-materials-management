@@ -8,6 +8,7 @@ use App\DTO\SolicitudDto;
 use App\Query\ListarSolicitudesQuery;
 use Infrastructure\Http\Request;
 use Infrastructure\Http\Response;
+use Infrastructure\Http\Validator;
 
 class SolicitudesController
 {
@@ -96,6 +97,23 @@ class SolicitudesController
             $request = new Request();
 
             $data = $request->input();
+
+            $rules = [
+                'material_id' => ['required', 'numeric'],
+                'quantity' => ['required', 'numeric'],
+                'delivery_address' => ['required', 'string'],
+                'required_at' => ['required', 'string']
+            ];
+
+            $validator = new Validator($data, $rules);
+
+            if ($validator->fails()) {
+                return Response::json([
+                    'success' => false,
+                    'errors' => $validator->errores(),
+                    'status_code' => 422
+                ], 422);
+            }
 
             $command = new CrearSolicitudCommand(
                 materialId: (int)$data['material_id'],
