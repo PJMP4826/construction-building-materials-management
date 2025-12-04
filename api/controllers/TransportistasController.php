@@ -8,6 +8,7 @@ use App\DTO\TransportistaDto;
 use App\Query\ListarTransportistasQuery;
 use Infrastructure\Http\Request;
 use Infrastructure\Http\Response;
+use Infrastructure\Http\Validator;
 
 class TransportistasController
 {
@@ -89,6 +90,23 @@ class TransportistasController
             $request = new Request();
 
             $data = $request->input();
+
+            $rules = [
+                'name' => ['required', 'string'],
+                'email' => ['required', 'string'],
+                'delivery_zone' => ['required', 'string'],
+                'available' => ['required']
+            ];
+
+            $validator = new Validator($data, $rules);
+
+            if ($validator->fails()) {
+                return Response::json([
+                    'success' => false,
+                    'errors' => $validator->errores(),
+                    'status_code' => 422
+                ], 422);
+            }
 
             $available = true;
             if (isset($data['available']) && $data['available'] !== null) {
