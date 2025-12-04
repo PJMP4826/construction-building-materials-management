@@ -24,6 +24,7 @@ return array(
     'App\\Handlers\\Query\\' => array($baseDir . '/app/handlers/queries'),
     'App\\Handlers\\Command\\' => array($baseDir . '/app/handlers/commands'),
     'App\\Handlers\\' => array($baseDir . '/app/handlers'),
+    'App\\Dispacher\\' => array($baseDir . '/app/dispacher'),
     'App\\DTO\\' => array($baseDir . '/app/dtos'),
     'App\\Command\\' => array($baseDir . '/app/commands'),
     'App\\' => array($baseDir . '/app'),

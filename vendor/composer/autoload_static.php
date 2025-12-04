@@ -51,6 +51,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
             'App\\Handlers\\Query\\' => 19,
             'App\\Handlers\\Command\\' => 21,
             'App\\Handlers\\' => 13,
+            'App\\Dispacher\\' => 14,
             'App\\DTO\\' => 8,
             'App\\Command\\' => 12,
             'App\\' => 4,
@@ -130,6 +131,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'App\\Handlers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/handlers',
+        ),
+        'App\\Dispacher\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/dispacher',
         ),
         'App\\DTO\\' => 
         array (

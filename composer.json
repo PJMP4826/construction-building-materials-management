@@ -6,6 +6,7 @@
         "psr-4": {
             "App\\": "app/",
             "App\\DTO\\": "app/dtos",
+            "App\\Dispacher\\": "app/dispacher",
             "App\\Query\\": "app/queries",
             "App\\Command\\": "app/commands",
             "App\\Handlers\\": "app/handlers",
