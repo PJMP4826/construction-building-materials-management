@@ -2,6 +2,7 @@
 
 namespace Api\Controllers;
 
+use App\Command\CrearMaterialCommand;
 use App\DTO\MaterialDto;
 use App\Handlers\Query\ListarMaterialesHandler;
 use App\Query\ListarMaterialesQuery;
@@ -25,8 +26,8 @@ class MaterialesController
             //params
             $activeParam = $request->query('active');
             $searchParam = $request->query('search');
-            $page = (int) $request->query('page') ?: 1;
-            $limit = (int) $request->query('limit') ?: 10;
+            $page = (int)$request->query('page') ?: 1;
+            $limit = (int)$request->query('limit') ?: 10;
 
             $active = null;
             if ($activeParam !== null) {
@@ -55,7 +56,7 @@ class MaterialesController
 
             $result['data'] = $data;
 
-            if(empty($result['data'])){
+            if (empty($result['data'])) {
                 return Response::json([
                     'success' => false,
                     'message' => 'not found',
@@ -68,6 +69,36 @@ class MaterialesController
                 'data' => $result,
                 'status_code' => 200
             ], 200);
+        } catch (\Exception $e) {
+            return Response::json([
+                'success' => false,
+                'message' => $e->getMessage(),
+                'status_code' => 500
+            ], 500);
+        }
+    }
+
+    public function createMaterials()
+    {
+        try {
+            $request = new Request();
+
+            $data = $request->input();
+
+            $active = null;
+            if ($data['active'] !== null) {
+                $active = filter_var($data['active'], FILTER_VALIDATE_BOOLEAN);
+            }
+
+            $command = new CrearMaterialCommand(
+                name: $data['name'],
+                description: $data['description'],
+                unit: $data['unit'],
+                unitPrice: $data['unit_price'],
+                stock: $data['stock'],
+                active: $active
+            );
+
         } catch (\Exception $e) {
             return Response::json([
                 'success' => false,

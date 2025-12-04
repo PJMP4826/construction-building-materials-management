@@ -2,7 +2,7 @@
 
 namespace App\Handlers\Command;
 
-use App\commands\CrearMaterialCommand;
+use App\Command\CrearMaterialCommand;
 use App\Interfaces\ICommandHandler;
 use Brick\Math\BigDecimal;
 use Domain\Entities\Material;
