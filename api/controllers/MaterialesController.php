@@ -72,7 +72,7 @@ class MaterialesController
 
             return Response::json([
                 'success' => true,
-                'data' => $result,
+                'data' => $result['data'],
                 'status_code' => 200
             ], 200);
         } catch (\Exception $e) {
