@@ -31,7 +31,7 @@ class Bus
 
         return $handler->handle($message);
     }
-    
+
     // verifica si hay un handler registrado para un mensaje
     public function hasHandler(string $messageClass): bool
     {

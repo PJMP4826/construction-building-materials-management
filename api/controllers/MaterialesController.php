@@ -3,19 +3,24 @@
 namespace Api\Controllers;
 
 use App\Command\CrearMaterialCommand;
+use App\Dispacher\Bus;
 use App\DTO\MaterialDto;
 use App\Handlers\Query\ListarMaterialesHandler;
+use App\Interfaces\ICommandHandler;
+use App\Interfaces\IQueryHandler;
 use App\Query\ListarMaterialesQuery;
 use Infrastructure\Http\Request;
 use Infrastructure\Http\Response;
 
 class MaterialesController
 {
-    private readonly ListarMaterialesHandler $handler;
+    private readonly Bus $bus;
 
-    public function __construct(ListarMaterialesHandler $handler)
+    public function __construct(
+        Bus $bus
+    )
     {
-        $this->handler = $handler;
+        $this->bus = $bus;
     }
 
     public function getMaterials(): Response
@@ -41,7 +46,7 @@ class MaterialesController
                 limit: $limit
             );
 
-            $result = $this->handler->handle($query);
+            $result = $this->bus->dispatch($query);
 
             $data = [];
 
@@ -78,7 +83,7 @@ class MaterialesController
         }
     }
 
-    public function createMaterials()
+    public function createMaterial()
     {
         try {
             $request = new Request();
@@ -99,10 +104,28 @@ class MaterialesController
                 active: $active
             );
 
+            $result = $this->bus->dispatch($command);
+
+            return Response::json([
+                'success' => $result['success'],
+                'data' => [
+                    'id' => $result['id'],
+                    'material' => $result['material']
+                ],
+                'status_code' => 200
+            ]);
+
+        } catch (\InvalidArgumentException $e) {
+            return Response::json([
+                'success' => false,
+                'error' => $e->getMessage(),
+                'status_code' => 400
+            ], 400);
+
         } catch (\Exception $e) {
             return Response::json([
                 'success' => false,
-                'message' => $e->getMessage(),
+                'error' => $e->getMessage(),
                 'status_code' => 500
             ], 500);
         }
