@@ -46,6 +46,7 @@ class MaterialesController
                 limit: $limit
             );
 
+            //handler
             $result = $this->bus->dispatch($query);
 
             $data = [];
@@ -104,6 +105,7 @@ class MaterialesController
                 active: $active
             );
 
+            //handler
             $result = $this->bus->dispatch($command);
 
             return Response::json([

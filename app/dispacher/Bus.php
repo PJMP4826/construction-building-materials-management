@@ -6,7 +6,7 @@ class Bus
 {
     private array $handlers = [];
 
-    public function register(string $messageClass, object $handler)
+    public function register(string $messageClass, object $handler): void
     {
         $this->handlers[$messageClass] = $handler;
     }
