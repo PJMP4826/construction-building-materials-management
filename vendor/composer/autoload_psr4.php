@@ -10,6 +10,7 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
+    'Infrastructure\\Write\\Repository\\' => array($baseDir . '/infrastructure/persistence/write'),
     'Infrastructure\\Read\\Repository\\' => array($baseDir . '/infrastructure/persistence/read'),
     'Infrastructure\\Http\\' => array($baseDir . '/infrastructure/http'),
     'Infrastructure\\Database\\' => array($baseDir . '/infrastructure/database'),

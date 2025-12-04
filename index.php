@@ -16,7 +16,7 @@ use Infrastructure\Http\Router;
 use Api\Controllers\MaterialesController;
 use App\Handlers\Query\ListarMaterialesHandler;
 use Infrastructure\Read\Repository\MaterialReadRepository;
-use Infrastructure\Read\write\MaterialWriteRepository;
+use Infrastructure\Write\Repository\MaterialWriteRepository;
 
 //$conexion = DatabaseConnection::Conectar();
 

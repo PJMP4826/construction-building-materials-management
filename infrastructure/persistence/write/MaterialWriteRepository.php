@@ -1,9 +1,9 @@
 <?php
 
-namespace Infrastructure\Read\write;
+namespace Infrastructure\Write\Repository;
 
 use Brick\Math\BigDecimal;
-use Domain\interfaces\IWriteRepository;
+use Domain\Interfaces\IWriteRepository;
 use Domain\Entities\Material;
 
 class MaterialWriteRepository implements IWriteRepository

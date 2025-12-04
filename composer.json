@@ -19,6 +19,7 @@
             "Infrastructure\\Database\\": "infrastructure/database",
             "Infrastructure\\Http\\": "infrastructure/http",
             "Infrastructure\\Read\\Repository\\": "infrastructure/persistence/read",
+            "Infrastructure\\Write\\Repository\\": "infrastructure/persistence/write",
             "Api\\Controllers\\": "api/controllers"
         }
     },

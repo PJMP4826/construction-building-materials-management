@@ -25,6 +25,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         ),
         'I' => 
         array (
+            'Infrastructure\\Write\\Repository\\' => 32,
             'Infrastructure\\Read\\Repository\\' => 31,
             'Infrastructure\\Http\\' => 20,
             'Infrastructure\\Database\\' => 24,
@@ -75,6 +76,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Infrastructure\\Write\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/infrastructure/persistence/write',
         ),
         'Infrastructure\\Read\\Repository\\' => 
         array (
