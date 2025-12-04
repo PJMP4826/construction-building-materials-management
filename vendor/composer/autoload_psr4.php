@@ -12,6 +12,7 @@ return array(
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'Infrastructure\\Write\\Repository\\' => array($baseDir . '/infrastructure/persistence/write'),
     'Infrastructure\\Read\\Repository\\' => array($baseDir . '/infrastructure/persistence/read'),
+    'Infrastructure\\Http\\Validation\\' => array($baseDir . '/infrastructure/http/validations'),
     'Infrastructure\\Http\\' => array($baseDir . '/infrastructure/http'),
     'Infrastructure\\Database\\' => array($baseDir . '/infrastructure/database'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),

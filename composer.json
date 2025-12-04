@@ -18,6 +18,7 @@
             "Domain\\Interfaces\\" : "domain/interfaces",
             "Infrastructure\\Database\\": "infrastructure/database",
             "Infrastructure\\Http\\": "infrastructure/http",
+            "Infrastructure\\Http\\Validation\\": "infrastructure/http/validations",
             "Infrastructure\\Read\\Repository\\": "infrastructure/persistence/read",
             "Infrastructure\\Write\\Repository\\": "infrastructure/persistence/write",
             "Api\\Controllers\\": "api/controllers"

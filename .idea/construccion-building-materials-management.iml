@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app/commands" isTestSource="false" packagePrefix="App\Command\" />
       <sourceFolder url="file://$MODULE_DIR$/app/dispacher" isTestSource="false" packagePrefix="App\Dispacher\" />
       <sourceFolder url="file://$MODULE_DIR$/infrastructure/persistence/write" isTestSource="false" packagePrefix="Infrastructure\Write\Repository\" />
+      <sourceFolder url="file://$MODULE_DIR$/infrastructure/http/validations" isTestSource="false" packagePrefix="Infrastructure\Http\Validation\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />

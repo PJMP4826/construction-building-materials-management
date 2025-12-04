@@ -27,6 +27,7 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         array (
             'Infrastructure\\Write\\Repository\\' => 32,
             'Infrastructure\\Read\\Repository\\' => 31,
+            'Infrastructure\\Http\\Validation\\' => 31,
             'Infrastructure\\Http\\' => 20,
             'Infrastructure\\Database\\' => 24,
         ),
@@ -84,6 +85,10 @@ class ComposerStaticInit3eccaf4b14451cf0358b5dad99172d3c
         'Infrastructure\\Read\\Repository\\' => 
         array (
             0 => __DIR__ . '/../..' . '/infrastructure/persistence/read',
+        ),
+        'Infrastructure\\Http\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/infrastructure/http/validations',
         ),
         'Infrastructure\\Http\\' => 
         array (
