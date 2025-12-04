@@ -2,11 +2,14 @@
 
 use App\Command\CrearMaterialCommand;
 use App\Command\CrearTransportistaCommand;
+use App\Command\CrearSolicitudCommand;
 use App\Dispacher\Bus;
 use App\Handlers\Command\CrearMaterialCommandHandler;
 use App\Handlers\Command\CrearTransportistaCommandHandler;
+use App\Handlers\Command\CrearSolicitudCommandHandler;
 use App\Query\ListarMaterialesQuery;
 use App\Query\ListarTransportistasQuery;
+use App\Query\ListarSolicitudesQuery;
 use Dotenv\Dotenv;
 
 require __DIR__ . '../vendor/autoload.php';
@@ -18,12 +21,16 @@ use Infrastructure\Database\DatabaseConnection;
 use Infrastructure\Http\Router;
 use Api\Controllers\MaterialesController;
 use Api\Controllers\TransportistasController;
+use Api\Controllers\SolicitudesController;
 use App\Handlers\Query\ListarMaterialesHandler;
 use App\Handlers\Query\ListarTransportistasHandler;
+use App\Handlers\Query\ListarSolicitudesHandler;
 use Infrastructure\Read\Repository\MaterialReadRepository;
 use Infrastructure\Read\Repository\TransportistaReadRepository;
+use Infrastructure\Read\Repository\SolicitudReadRepository;
 use Infrastructure\Write\Repository\MaterialWriteRepository;
 use Infrastructure\Write\Repository\TransportistaWriteRepository;
+use Infrastructure\Write\Repository\SolicitudWriteRepository;
 
 //$conexion = DatabaseConnection::Conectar();
 
@@ -97,6 +104,43 @@ $router->post('/api/create-transportistas', function () {
 
     $controller = new TransportistasController($bus);
     $controller->createTransportista();
+});
+
+$router->get('/api/get-solicitudes', function () {
+    $respository = new SolicitudReadRepository(DatabaseConnection::Conectar());
+    $handler = new ListarSolicitudesHandler($respository);
+
+    $bus = new Bus();
+    $bus->register(ListarSolicitudesQuery::class, $handler);
+
+    $controller = new SolicitudesController($bus);
+    $controller->getSolicitudes();
+});
+
+$router->post('/api/create-solicitudes', function () {
+    $db = DatabaseConnection::Conectar();
+
+    $readRepository = new SolicitudReadRepository($db);
+    $writeRepository = new SolicitudWriteRepository($db);
+    $materialReadRepository = new MaterialReadRepository($db);
+
+    //Command Handlers
+    $listarSolicitudHandler = new ListarSolicitudesHandler($readRepository);
+    $createSolicitudHandler = new CrearSolicitudCommandHandler(
+        $readRepository,
+        $writeRepository,
+        $materialReadRepository
+    );
+
+    $bus = new Bus();
+
+    //query handlers
+    $bus->register(ListarSolicitudesQuery::class, $listarSolicitudHandler);
+    $bus->register(CrearSolicitudCommand::class, $createSolicitudHandler);
+
+
+    $controller = new SolicitudesController($bus);
+    $controller->createSolicitud();
 });
 
 $router->run();
