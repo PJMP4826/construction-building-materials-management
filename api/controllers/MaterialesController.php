@@ -11,6 +11,7 @@ use App\Interfaces\IQueryHandler;
 use App\Query\ListarMaterialesQuery;
 use Infrastructure\Http\Request;
 use Infrastructure\Http\Response;
+use Infrastructure\Http\Validator;
 
 class MaterialesController
 {
@@ -90,6 +91,25 @@ class MaterialesController
             $request = new Request();
 
             $data = $request->input();
+
+            $rules = [
+                'name' => ['required', 'string'],
+                'description' => ['required', 'string'],
+                'unit' => ['required', 'string'],
+                'unit_price' => ['required', 'string'],
+                'stock' => ['required', 'numeric'],
+                'active' => ['required']
+            ];
+
+            $validator = new Validator($data, $rules);
+
+            if ($validator->fails()) {
+                return Response::json([
+                    'success' => false,
+                    'errors' => $validator->errores(),
+                    'status_code' => 422
+                ], 422);
+            }
 
             $active = null;
             if ($data['active'] !== null) {
