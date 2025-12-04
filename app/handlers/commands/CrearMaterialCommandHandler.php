@@ -11,7 +11,7 @@ use Domain\interfaces\IWriteRepository;
 use http\Exception\InvalidArgumentException;
 use Infrastructure\Read\write\MaterialWriteRepository;
 
-class CrearMaterialHandler implements ICommandHandler
+class CrearMaterialCommandHandler implements ICommandHandler
 {
     private readonly IReadRepository $readRepository;
     private readonly IWriteRepository $writeRepository;

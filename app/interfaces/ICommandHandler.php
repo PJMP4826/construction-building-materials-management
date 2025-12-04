@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface ICommandHandler
 {
-    public function handle(object $query): array;
+    public function handle(object $command): array;
 }
