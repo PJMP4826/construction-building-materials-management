@@ -78,7 +78,7 @@ class CrearMaterialCommandHandler implements ICommandHandler
             ],
             limit: 1
         );
-        
+
         if (!empty($existing)) {
             foreach ($existing as $material) {
                 if (strtolower(trim($material['name'])) === strtolower(trim($name))) {
