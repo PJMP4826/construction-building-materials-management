@@ -9,7 +9,6 @@ use Domain\Entities\Material;
 use Domain\Interfaces\IReadRepository;
 use Domain\interfaces\IWriteRepository;
 use http\Exception\InvalidArgumentException;
-use Infrastructure\Read\write\MaterialWriteRepository;
 
 class CrearMaterialCommandHandler implements ICommandHandler
 {
@@ -67,7 +66,7 @@ class CrearMaterialCommandHandler implements ICommandHandler
         return [
             'success' => true,
             'id' => $material->getId(),
-            'material' => $material,
+            'material' => $material->toArray(),
         ];
     }
 
@@ -77,14 +76,16 @@ class CrearMaterialCommandHandler implements ICommandHandler
             [
                 'search' => $name,
             ],
-            limit: 0
+            limit: 1
         );
-
+        
         if (!empty($existing)) {
-            if (strtolower($existing[0]['name']) === strtolower(trim($name))) {
-                throw new \DomainException(
-                    "Ya existe un material con el nombre: $name"
-                );
+            foreach ($existing as $material) {
+                if (strtolower(trim($material['name'])) === strtolower(trim($name))) {
+                    throw new \DomainException(
+                        "Ya existe un material con el nombre: $name"
+                    );
+                }
             }
         }
     }

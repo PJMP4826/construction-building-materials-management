@@ -187,4 +187,17 @@ class Material
     {
         $this->update_at = $update_at;
     }
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'description' => $this->description,
+            'unit' => $this->unit->value,
+            'unit_price' => $this->unit_price->toFloat(),
+            'stock' => $this->stock,
+            'active' => $this->active
+
+        ];
+    }
 }

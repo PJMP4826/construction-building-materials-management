@@ -54,7 +54,7 @@ $router->post('/api/create-materials', function () {
 
 
     $controller = new MaterialesController($bus);
-    $controller->getMaterials();
+    $controller->createMaterial();
 });
 
 $router->run();

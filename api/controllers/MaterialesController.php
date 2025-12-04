@@ -124,6 +124,12 @@ class MaterialesController
                 'status_code' => 400
             ], 400);
 
+        } catch (\DomainException $e) {
+            return Response::json([
+                'success' => false,
+                'error' => $e->getMessage(),
+                'status_code' => 409
+            ], 409);
         } catch (\Exception $e) {
             return Response::json([
                 'success' => false,
